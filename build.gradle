@@ -9,8 +9,8 @@ plugins {
 sourceCompatibility = 17
 targetCompatibility = 17
 
-group 'me.exzork.gcauth'
-version '2.1.2'
+group 'dev.ramaadi.nextgengcauth'
+version '1.0.0'
 
 repositories {
     mavenCentral()
@@ -20,7 +20,6 @@ dependencies {
     implementation files('lib/grasscutter-1.0.3-dev.jar')
     implementation 'org.springframework.security:spring-security-crypto:5.6.3'
     implementation 'commons-logging:commons-logging:1.2'
-    implementation 'com.auth0:java-jwt:3.19.1'
     implementation 'javax.servlet:javax.servlet-api:4.0.1'
 }
 
@@ -29,7 +28,7 @@ test {
 }
 
 jar{
-    jar.baseName = 'gcauth'
+    jar.baseName = 'nextgengcauth'
     from{
         configurations.runtimeClasspath.collect{
             if (it.name in ['spring-security-crypto-5.6.3.jar','commons-logging-1.2.jar','javax.servlet-api-4.0.1.jar','java-jwt-3.19.1.jar','jackson-annotations-2.13.2.jar','jackson-core-2.13.2.jar','jackson-databind-2.13.2.2.jar']) {
@@ -41,5 +40,5 @@ jar{
         exclude("META-INF/versions/9/module-info.class")
         exclude("META-INF/NOTICE")
     }
-    destinationDir = file(".")
+    destinationDir = file("/Users/weka/Documents/GC Server/plugins")
 }

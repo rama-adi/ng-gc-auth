@@ -1,4 +1,4 @@
-package me.exzork.gcauth.json;
+package dev.ramaadi.nextgengcauth.json;
 
 public class LoginGenerateToken {
     public String username;

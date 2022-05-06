@@ -5,7 +5,7 @@ Grasscutter Authentication System
 - To change hash algorithm change `Hash` in config.json inside plugins/GCAuth (Only Bcrypt and Scrypt is supported)
 - All payload must be send with `application/json` and Compact JSON format ( without unnecessary spaces )
 - Auth endpoint is:
-  - Authentication Checking : `/authentication/type` (GET) , it'll return `me.exzork.gcauth.handler.GCAuthAuthenticationHandler` if GCAuth is loaded and enabled.
+  - Authentication Checking : `/authentication/type` (GET) , it'll return `GCNGAuthAuthenticationHandler` if GCAuth is loaded and enabled.
   - Register: `/authentication/register` (POST)
   ```
   {"username":"username","password":"password","password_confirmation":"password_confirmation"}

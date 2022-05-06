@@ -1,6 +1,7 @@
-package me.exzork.gcauth.handler;
+package dev.ramaadi.nextgengcauth.handler;
 
 
+import dev.ramaadi.nextgengcauth.utils.HMAC;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
@@ -8,38 +9,50 @@ import emu.grasscutter.server.dispatch.json.LoginAccountRequestJson;
 import emu.grasscutter.server.dispatch.json.LoginResultJson;
 import express.http.Request;
 import express.http.Response;
-import me.exzork.gcauth.utils.Authentication;
+import dev.ramaadi.nextgengcauth.utils.Authentication;
 
 import java.io.IOException;
 
-public class GCAuthAuthenticationHandler implements AuthenticationHandler {
+public class NGGCAuthAuthenticationHandler implements AuthenticationHandler {
 
     @Override
     public void handleLogin(Request req, Response res) {
+
+        if(!HMAC.verifyHmacFromRequest(req))
+            res.send(HMAC.hmacVerificationErrorJson());
+
         try {
             new LoginHandler().handle(req, res);
         } catch (IOException e) {
-            Grasscutter.getLogger().warn("[GCAuth] Unable to handle login request");
+            Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle login request");
             e.printStackTrace();
         }
     }
 
     @Override
     public void handleRegister(Request req, Response res) {
+
+        if(!HMAC.verifyHmacFromRequest(req))
+            res.send(HMAC.hmacVerificationErrorJson());
+
         try {
             new RegisterHandler().handle(req, res);
         } catch (IOException e) {
-            Grasscutter.getLogger().warn("[GCAuth] Unable to handle register request");
+            Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle register request");
             e.printStackTrace();
         }
     }
 
     @Override
     public void handleChangePassword(Request req, Response res) {
+
+
+        if(!HMAC.verifyHmacFromRequest(req))
+            res.send(HMAC.hmacVerificationErrorJson());
         try {
             new ChangePasswordHandler().handle(req, res);
         } catch (IOException e) {
-            Grasscutter.getLogger().warn("[GCAuth] Unable to handle change password request");
+            Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle change password request");
             e.printStackTrace();
         }
     }
@@ -50,8 +63,8 @@ public class GCAuthAuthenticationHandler implements AuthenticationHandler {
 
         // Login
         Account account = Authentication.getAccountByOneTimeToken(requestData.account);
-        if(account == null) {
-            Grasscutter.getLogger().info("[GCAuth] Client " + request.ip() + " failed to log in");
+        if (account == null) {
+            Grasscutter.getLogger().info("[NG-GCAuth] Client " + request.ip() + " failed to log in");
             responseData.retcode = -201;
             responseData.message = "Token is invalid";
             return responseData;
@@ -63,7 +76,7 @@ public class GCAuthAuthenticationHandler implements AuthenticationHandler {
         responseData.data.account.token = account.generateSessionKey();
         responseData.data.account.email = account.getEmail();
 
-        Grasscutter.getLogger().info(String.format("[GCAuth] Client %s logged in as %s", request.ip(), responseData.data.account.uid));
+        Grasscutter.getLogger().info(String.format("[NG-GCAuth] Client %s logged in as %s", request.ip(), responseData.data.account.uid));
 
         return responseData;
     }

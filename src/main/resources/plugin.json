@@ -1,7 +1,7 @@
 {
-  "name": "GCAuth",
-  "description": "GCAuth is a plugin that allows you to implement authentication for your server.",
+  "name": "NextgenGCAuth",
+  "description": "Next-gen GC Auth. Tightly integrated with web component",
   "version": "1.0.0",
-  "author": ["ExZork"],
-  "mainClass": "me.exzork.gcauth.GCAuth"
+  "author": ["ExZork (Original Author)", "Onebyte"],
+  "mainClass": "dev.ramaadi.nextgengcauth.NextgenGCAuth"
 }
