@@ -61,11 +61,12 @@ public final class HMAC {
 
                     if (NextgenGCAuth.getConfig().VerboseOutput) {
                         Grasscutter.getLogger().warn("Failed API HMAC Signature verification on {}", request.path());
-                        Grasscutter.getLogger().warn("Expected: {}", verify(
-                                request.get("X-AUTH-HASH"),
-                                request.ctx().body(),
-                                (key + request.get("X-AUTH-TIMESTAMP"))
-                        ));
+                        try{
+                            Grasscutter.getLogger().warn("Expected: {}", hash(
+                                    request.ctx().body(),
+                                    (key + request.get("X-AUTH-TIMESTAMP"))
+                            ));
+                        }catch (Exception ignored){}
                         Grasscutter.getLogger().warn("Got: {}", request.get("X-AUTH-HASH"));
                     }
 
