@@ -34,6 +34,7 @@ public class NextgenGCAuth extends Plugin {
         if(Grasscutter.getDispatchServer().registerAuthHandler(new NGGCAuthAuthenticationHandler())) {
             Grasscutter.getLogger().info("[NG-GCAuth] Authentication Enabled!");
             Grasscutter.getLogger().info("[NG-GCAuth] This is a forked version of GCAuth for use with the web component");
+            Grasscutter.getLogger().error("NG-GCAUTH IS AN OPEN-SOURCE SOFTWARE! IF YOU PAID FOR IT YOU ARE SCAMMED!");
             if(Grasscutter.getConfig().getDispatchOptions().AutomaticallyCreateAccounts) {
                 Grasscutter.getLogger().warn("[NG-GCAuth] Auth does not support automatic account creation. Please disable in the server's config.json or just ignore this warning.");
             }

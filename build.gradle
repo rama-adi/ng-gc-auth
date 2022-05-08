@@ -28,7 +28,7 @@ test {
 }
 
 jar{
-    jar.baseName = 'nextgengcauth'
+    jar.baseName = 'nextgen-gc-auth'
     from{
         configurations.runtimeClasspath.collect{
             if (it.name in ['spring-security-crypto-5.6.3.jar','commons-logging-1.2.jar','javax.servlet-api-4.0.1.jar','java-jwt-3.19.1.jar','jackson-annotations-2.13.2.jar','jackson-core-2.13.2.jar','jackson-databind-2.13.2.2.jar']) {

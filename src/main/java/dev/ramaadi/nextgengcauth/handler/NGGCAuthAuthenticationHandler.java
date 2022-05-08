@@ -18,11 +18,9 @@ public class NGGCAuthAuthenticationHandler implements AuthenticationHandler {
     @Override
     public void handleLogin(Request req, Response res) {
 
-        if(!HMAC.verifyHmacFromRequest(req))
-            res.send(HMAC.hmacVerificationErrorJson());
-
         try {
-            new LoginHandler().handle(req, res);
+            if (!HMAC.verifyHmacFromRequest(req)) res.send(HMAC.hmacVerificationErrorJson());
+            else new LoginHandler().handle(req, res);
         } catch (IOException e) {
             Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle login request");
             e.printStackTrace();
@@ -32,11 +30,10 @@ public class NGGCAuthAuthenticationHandler implements AuthenticationHandler {
     @Override
     public void handleRegister(Request req, Response res) {
 
-        if(!HMAC.verifyHmacFromRequest(req))
-            res.send(HMAC.hmacVerificationErrorJson());
 
         try {
-            new RegisterHandler().handle(req, res);
+            if (!HMAC.verifyHmacFromRequest(req)) res.send(HMAC.hmacVerificationErrorJson());
+            else new RegisterHandler().handle(req, res);
         } catch (IOException e) {
             Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle register request");
             e.printStackTrace();
@@ -47,10 +44,9 @@ public class NGGCAuthAuthenticationHandler implements AuthenticationHandler {
     public void handleChangePassword(Request req, Response res) {
 
 
-        if(!HMAC.verifyHmacFromRequest(req))
-            res.send(HMAC.hmacVerificationErrorJson());
         try {
-            new ChangePasswordHandler().handle(req, res);
+            if (!HMAC.verifyHmacFromRequest(req)) res.send(HMAC.hmacVerificationErrorJson());
+            else new ChangePasswordHandler().handle(req, res);
         } catch (IOException e) {
             Grasscutter.getLogger().warn("[NG-GCAuth] Unable to handle change password request");
             e.printStackTrace();
