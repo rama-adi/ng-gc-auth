@@ -1,4 +1,4 @@
-package dev.ramaadi.nextgengcauth.json;
+package dev.ramaadi.nextgen_gcauth.json;
 
 public class AuthResponseJson {
     public boolean success;

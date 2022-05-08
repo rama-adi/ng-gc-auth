@@ -1,4 +1,4 @@
-package dev.ramaadi.nextgengcauth;
+package dev.ramaadi.nextgen_gcauth;
 
 public final class Config {
     public String SecretAuthKey = "";

@@ -2,6 +2,6 @@
   "name": "NextgenGCAuth",
   "description": "Next-gen GC Auth. Tightly integrated with web component",
   "version": "1.0.0",
-  "author": ["ExZork (Original Author)", "Onebyte"],
-  "mainClass": "dev.ramaadi.nextgengcauth.NextgenGCAuth"
+  "author": ["ExZork", "Onebyte"],
+  "mainClass": "dev.ramaadi.nextgen_gcauth.NextgenGCAuth"
 }

@@ -1,4 +1,4 @@
-package dev.ramaadi.nextgengcauth.utils;
+package dev.ramaadi.nextgen_gcauth.utils;
 
 import emu.grasscutter.database.DatabaseHelper;
 import emu.grasscutter.game.Account;

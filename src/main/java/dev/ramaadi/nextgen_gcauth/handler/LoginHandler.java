@@ -1,9 +1,9 @@
-package dev.ramaadi.nextgengcauth.handler;
+package dev.ramaadi.nextgen_gcauth.handler;
 
 import com.google.gson.Gson;
-import dev.ramaadi.nextgengcauth.json.AuthResponseJson;
-import dev.ramaadi.nextgengcauth.json.LoginGenerateToken;
-import dev.ramaadi.nextgengcauth.utils.Authentication;
+import dev.ramaadi.nextgen_gcauth.json.AuthResponseJson;
+import dev.ramaadi.nextgen_gcauth.json.LoginGenerateToken;
+import dev.ramaadi.nextgen_gcauth.utils.Authentication;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import express.http.HttpContextHandler;

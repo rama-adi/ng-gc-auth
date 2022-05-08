@@ -1,6 +1,6 @@
-package dev.ramaadi.nextgengcauth.handler;
+package dev.ramaadi.nextgen_gcauth.handler;
 
-import dev.ramaadi.nextgengcauth.json.AuthResponseJson;
+import dev.ramaadi.nextgen_gcauth.json.AuthResponseJson;
 import express.http.HttpContextHandler;
 import express.http.Request;
 import express.http.Response;

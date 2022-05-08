@@ -1,7 +1,7 @@
-package dev.ramaadi.nextgengcauth.handler;
+package dev.ramaadi.nextgen_gcauth.handler;
 
 
-import dev.ramaadi.nextgengcauth.utils.HMAC;
+import dev.ramaadi.nextgen_gcauth.utils.HMAC;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.game.Account;
 import emu.grasscutter.server.dispatch.authentication.AuthenticationHandler;
@@ -9,7 +9,7 @@ import emu.grasscutter.server.dispatch.json.LoginAccountRequestJson;
 import emu.grasscutter.server.dispatch.json.LoginResultJson;
 import express.http.Request;
 import express.http.Response;
-import dev.ramaadi.nextgengcauth.utils.Authentication;
+import dev.ramaadi.nextgen_gcauth.utils.Authentication;
 
 import java.io.IOException;
 

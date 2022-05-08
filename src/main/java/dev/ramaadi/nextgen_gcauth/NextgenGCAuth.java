@@ -1,11 +1,11 @@
-package dev.ramaadi.nextgengcauth;
+package dev.ramaadi.nextgen_gcauth;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import emu.grasscutter.Grasscutter;
 import emu.grasscutter.plugin.Plugin;
-import dev.ramaadi.nextgengcauth.handler.NGGCAuthAuthenticationHandler;
-import dev.ramaadi.nextgengcauth.utils.Authentication;
+import dev.ramaadi.nextgen_gcauth.handler.NGGCAuthAuthenticationHandler;
+import dev.ramaadi.nextgen_gcauth.utils.Authentication;
 
 import java.io.File;
 import java.io.FileReader;

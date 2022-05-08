@@ -1,8 +1,8 @@
-package dev.ramaadi.nextgengcauth.utils;
+package dev.ramaadi.nextgen_gcauth.utils;
 
-import dev.ramaadi.nextgengcauth.NextgenGCAuth;
+import dev.ramaadi.nextgen_gcauth.NextgenGCAuth;
 import emu.grasscutter.Grasscutter;
-import dev.ramaadi.nextgengcauth.json.AuthResponseJson;
+import dev.ramaadi.nextgen_gcauth.json.AuthResponseJson;
 import express.http.Request;
 
 

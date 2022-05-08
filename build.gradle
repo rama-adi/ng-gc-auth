@@ -9,7 +9,7 @@ plugins {
 sourceCompatibility = 17
 targetCompatibility = 17
 
-group 'dev.ramaadi.nextgengcauth'
+group 'dev.ramaadi.nextgen_gcauth'
 version '1.0.0'
 
 repositories {
